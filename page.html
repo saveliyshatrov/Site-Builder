@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu+Mono&display=swap" rel="stylesheet"> 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <title>
+        Constructor
+    </title>
+</head>
+<body id="body" oncontextmenu="return false;">
+    <div class="popup-choose-layer d-none" id="pcl">
+        <div class="pcl-button">add to layer up</div>
+        <div class="pcl-button">add inside</div>
+        <div class="pcl-button">add to layer down</div>
+        <div class="pcl-button danger" id="removeElem">remove element</div>
+        <div class="pcl-button" id="pcl-cancel">cancel</div>
+    </div>
+    <div class="shadow d-none" id="shadow"></div>
+    <div class="popup d-none" id="popup">
+        <div class="popup-header" id="popup-header">1</div>
+        <div class="mainfooter">
+            <div class="popup-main" id="popup-main">2</div>
+        <hr class="popup-hr">
+        <div class="popup-footer">
+            <button id="popUpYes">Yes</button>
+            <button id="popUpNo">No</button>
+        </div>
+        </div>
+    </div>
+    <div class="popup d-none" id="popup-info">
+        <div class="popup-header" id="popup-header-info">1</div>
+        <div class="mainfooter">
+            <div class="popup-main" id="popup-main-info">2</div>
+        <hr class="popup-hr">
+        <div class="popup-footer">
+            <button id="popUpOk">Ok</button>
+        </div>
+        </div>
+    </div>
+    <div class="popup-menu-left d-none" id="popup-menu-left">
+        <div class="popup-menu-header" id="popup-menu-header-settings">Settings</div>
+        <div class="CSS-Settings"></div>
+    </div>
+    <div class="popup-menu-right d-none" id="popup-menu-right">
+        <div class="popup-menu-header">Colors</div>
+        <div class="CSS-Colors">
+                <div class="e-row" role="row">
+                    <span class="e-tile" role="gridcell" aria-label="#000000ff" aria-selected="false"
+                        style="background-color: rgb(0, 0, 0);"></span>
+                    <span class="e-tile" role="gridcell" aria-label="#f44336ff" aria-selected="false"
+                        style="background-color: rgb(244, 67, 54);"></span>
+                    <span class="e-tile" role="gridcell" aria-label="#e91e63ff" aria-selected="false"
+                        style="background-color: rgb(233, 30, 99);"></span>
+                    <span class="e-tile" role="gridcell" aria-label="#9c27b0ff" aria-selected="false"
+                        style="background-color: rgb(156, 39, 176);"></span>
+                    <span class="e-tile" role="gridcell" aria-label="#673ab7ff" aria-selected="false"
+                        style="background-color: rgb(103, 58, 183);"></span>
+                    <span class="e-tile" role="gridcell" aria-label="#2196f3ff" aria-selected="false"
+                        style="background-color: rgb(33, 150, 243);"></span>
+                    <span class="e-tile" role="gridcell" aria-label="#03a9f4ff" aria-selected="false"
+                        style="background-color: rgb(3, 169, 244);"></span>
+                    <span class="e-tile" role="gridcell" aria-label="#00bcd4ff" aria-selected="false"
+                        style="background-color: rgb(0, 188, 212);"></span>
+                    <span class="e-tile" role="gridcell" aria-label="#009688ff" aria-selected="false"
+                        style="background-color: rgb(0, 150, 136);"></span>
+                    <span class="e-tile" role="gridcell" aria-label="#ffeb3bff" aria-selected="false"
+                        style="background-color: rgb(255, 235, 59);"></span>
+                </div>
+                <div class="e-row" role="row">
+                    <span class="e-tile" role="gridcell" aria-label="#ffffffff" aria-selected="false"
+                        style="background-color: rgb(255, 255, 255);"></span>
+                    <span class="e-tile" role="gridcell" aria-label="#ffebeeff" aria-selected="false"
+                        style="background-color: rgb(255, 235, 238);"></span>
+                    <span class="e-tile" role="gridcell" aria-label="#fce4ecff" aria-selected="false"
+                        style="background-color: rgb(252, 228, 236);"></span>
+                    <span class="e-tile" role="gridcell" aria-label="#f3e5f5ff" aria-selected="false"
+                        style="background-color: rgb(243, 229, 245);"></span>
+                    <span class="e-tile" role="gridcell" aria-label="#ede7f6ff" aria-selected="false"
+                        style="background-color: rgb(237, 231, 246);"></span>
+                    <span class="e-tile" role="gridcell" aria-label="#e3f2fdff" aria-selected="false"
+                        style="background-color: rgb(227, 242, 253);"></span>
+                    <span class="e-tile" role="gridcell" aria-label="#e1f5feff" aria-selected="false"
+                        style="background-color: rgb(225, 245, 254);"></span>
+                    <span class="e-tile" role="gridcell" aria-label="#e0f7faff" aria-selected="false"
+                        style="background-color: rgb(224, 247, 250);"></span>
+                    <span class="e-tile" role="gridcell" aria-label="#e0f2f1ff" aria-selected="false"
+                        style="background-color: rgb(224, 242, 241);"></span>
+                    <span class="e-tile" role="gridcell" aria-label="#fffde7ff" aria-selected="false"
+                        style="background-color: rgb(255, 253, 231);"></span>
+                </div>
+                <div class="e-row" role="row">
+                    <span class="e-tile" role="gridcell" aria-label="#f2f2f2ff" aria-selected="false"
+                        style="background-color: rgb(242, 242, 242);"></span>
+                    <span class="e-tile" role="gridcell" aria-label="#ffcdd2ff" aria-selected="false"
+                        style="background-color: rgb(255, 205, 210);"></span><span class="e-tile" role="gridcell"
+                        aria-label="#f8bbd0ff" aria-selected="false" style="background-color: rgb(248, 187, 208);"></span><span
+                        class="e-tile" role="gridcell" aria-label="#e1bee7ff" aria-selected="false"
+                        style="background-color: rgb(225, 190, 231);"></span><span class="e-tile" role="gridcell"
+                        aria-label="#d1c4e9ff" aria-selected="false" style="background-color: rgb(209, 196, 233);"></span><span
+                        class="e-tile" role="gridcell" aria-label="#bbdefbff" aria-selected="false"
+                        style="background-color: rgb(187, 222, 251);"></span><span class="e-tile" role="gridcell"
+                        aria-label="#b3e5fcff" aria-selected="false" style="background-color: rgb(179, 229, 252);"></span><span
+                        class="e-tile" role="gridcell" aria-label="#b2ebf2ff" aria-selected="false"
+                        style="background-color: rgb(178, 235, 242);"></span><span class="e-tile" role="gridcell"
+                        aria-label="#b2dfdbff" aria-selected="false" style="background-color: rgb(178, 223, 219);"></span><span
+                        class="e-tile" role="gridcell" aria-label="#fff9c4ff" aria-selected="false"
+                        style="background-color: rgb(255, 249, 196);"></span></div>
+                <div class="e-row" role="row"><span class="e-tile" role="gridcell" aria-label="#e6e6e6ff" aria-selected="false"
+                        style="background-color: rgb(230, 230, 230);"></span><span class="e-tile" role="gridcell"
+                        aria-label="#ef9a9aff" aria-selected="false" style="background-color: rgb(239, 154, 154);"></span><span
+                        class="e-tile" role="gridcell" aria-label="#f48fb1ff" aria-selected="false"
+                        style="background-color: rgb(244, 143, 177);"></span><span class="e-tile" role="gridcell"
+                        aria-label="#ce93d8ff" aria-selected="false" style="background-color: rgb(206, 147, 216);"></span><span
+                        class="e-tile" role="gridcell" aria-label="#b39ddbff" aria-selected="false"
+                        style="background-color: rgb(179, 157, 219);"></span><span class="e-tile" role="gridcell"
+                        aria-label="#90caf9ff" aria-selected="false" style="background-color: rgb(144, 202, 249);"></span><span
+                        class="e-tile" role="gridcell" aria-label="#81d4faff" aria-selected="false"
+                        style="background-color: rgb(129, 212, 250);"></span><span class="e-tile" role="gridcell"
+                        aria-label="#80deeaff" aria-selected="false" style="background-color: rgb(128, 222, 234);"></span><span
+                        class="e-tile" role="gridcell" aria-label="#80cbc4ff" aria-selected="false"
+                        style="background-color: rgb(128, 203, 196);"></span><span class="e-tile" role="gridcell"
+                        aria-label="#fff59dff" aria-selected="false" style="background-color: rgb(255, 245, 157);"></span></div>
+                <div class="e-row" role="row"><span class="e-tile" role="gridcell" aria-label="#ccccccff" aria-selected="false"
+                        style="background-color: rgb(204, 204, 204);"></span><span class="e-tile" role="gridcell"
+                        aria-label="#e57373ff" aria-selected="false" style="background-color: rgb(229, 115, 115);"></span><span
+                        class="e-tile" role="gridcell" aria-label="#f06292ff" aria-selected="false"
+                        style="background-color: rgb(240, 98, 146);"></span><span class="e-tile" role="gridcell"
+                        aria-label="#ba68c8ff" aria-selected="false" style="background-color: rgb(186, 104, 200);"></span><span
+                        class="e-tile" role="gridcell" aria-label="#9575cdff" aria-selected="false"
+                        style="background-color: rgb(149, 117, 205);"></span><span class="e-tile" role="gridcell"
+                        aria-label="#64b5f6ff" aria-selected="false" style="background-color: rgb(100, 181, 246);"></span><span
+                        class="e-tile" role="gridcell" aria-label="#4fc3f7ff" aria-selected="false"
+                        style="background-color: rgb(79, 195, 247);"></span><span class="e-tile" role="gridcell"
+                        aria-label="#4dd0e1ff" aria-selected="false" style="background-color: rgb(77, 208, 225);"></span><span
+                        class="e-tile" role="gridcell" aria-label="#4db6acff" aria-selected="false"
+                        style="background-color: rgb(77, 182, 172);"></span><span class="e-tile" role="gridcell"
+                        aria-label="#fff176ff" aria-selected="false" style="background-color: rgb(255, 241, 118);"></span></div>
+                <div class="e-row" role="row"><span class="e-tile" role="gridcell" aria-label="#b3b3b3ff" aria-selected="false"
+                        style="background-color: rgb(179, 179, 179);"></span><span class="e-tile" role="gridcell"
+                        aria-label="#ef5350ff" aria-selected="false" style="background-color: rgb(239, 83, 80);"></span><span
+                        class="e-tile" role="gridcell" aria-label="#ec407aff" aria-selected="false"
+                        style="background-color: rgb(236, 64, 122);"></span><span class="e-tile" role="gridcell"
+                        aria-label="#ab47bcff" aria-selected="false" style="background-color: rgb(171, 71, 188);"></span><span
+                        class="e-tile" role="gridcell" aria-label="#7e57c2ff" aria-selected="false"
+                        style="background-color: rgb(126, 87, 194);"></span><span class="e-tile" role="gridcell"
+                        aria-label="#42a5f5ff" aria-selected="false" style="background-color: rgb(66, 165, 245);"></span><span
+                        class="e-tile" role="gridcell" aria-label="#29b6f6ff" aria-selected="false"
+                        style="background-color: rgb(41, 182, 246);"></span><span class="e-tile" role="gridcell"
+                        aria-label="#26c6daff" aria-selected="false" style="background-color: rgb(38, 198, 218);"></span><span
+                        class="e-tile" role="gridcell" aria-label="#26a69aff" aria-selected="false"
+                        style="background-color: rgb(38, 166, 154);"></span><span class="e-tile" role="gridcell"
+                        aria-label="#ffee58ff" aria-selected="false" style="background-color: rgb(255, 238, 88);"></span></div>
+                <div class="e-row" role="row"><span class="e-tile" role="gridcell" aria-label="#999999ff" aria-selected="false"
+                        style="background-color: rgb(153, 153, 153);"></span><span class="e-tile" role="gridcell"
+                        aria-label="#e53935ff" aria-selected="false" style="background-color: rgb(229, 57, 53);"></span><span
+                        class="e-tile" role="gridcell" aria-label="#d81b60ff" aria-selected="false"
+                        style="background-color: rgb(216, 27, 96);"></span><span class="e-tile" role="gridcell"
+                        aria-label="#8e24aaff" aria-selected="false" style="background-color: rgb(142, 36, 170);"></span><span
+                        class="e-tile" role="gridcell" aria-label="#5e35b1ff" aria-selected="false"
+                        style="background-color: rgb(94, 53, 177);"></span><span class="e-tile" role="gridcell"
+                        aria-label="#1e88e5ff" aria-selected="false" style="background-color: rgb(30, 136, 229);"></span><span
+                        class="e-tile" role="gridcell" aria-label="#039be5ff" aria-selected="false"
+                        style="background-color: rgb(3, 155, 229);"></span><span class="e-tile" role="gridcell"
+                        aria-label="#00acc1ff" aria-selected="false" style="background-color: rgb(0, 172, 193);"></span><span
+                        class="e-tile" role="gridcell" aria-label="#00897bff" aria-selected="false"
+                        style="background-color: rgb(0, 137, 123);"></span><span class="e-tile" role="gridcell"
+                        aria-label="#fdd835ff" aria-selected="false" style="background-color: rgb(253, 216, 53);"></span></div>
+                <div class="e-row" role="row"><span class="e-tile" role="gridcell" aria-label="#808080ff" aria-selected="false"
+                        style="background-color: rgb(128, 128, 128);"></span><span class="e-tile" role="gridcell"
+                        aria-label="#d32f2fff" aria-selected="false" style="background-color: rgb(211, 47, 47);"></span><span
+                        class="e-tile" role="gridcell" aria-label="#c2185bff" aria-selected="false"
+                        style="background-color: rgb(194, 24, 91);"></span><span class="e-tile" role="gridcell"
+                        aria-label="#7b1fa2ff" aria-selected="false" style="background-color: rgb(123, 31, 162);"></span><span
+                        class="e-tile" role="gridcell" aria-label="#512da8ff" aria-selected="false"
+                        style="background-color: rgb(81, 45, 168);"></span><span class="e-tile" role="gridcell"
+                        aria-label="#1976d2ff" aria-selected="false" style="background-color: rgb(25, 118, 210);"></span><span
+                        class="e-tile" role="gridcell" aria-label="#0288d1ff" aria-selected="false"
+                        style="background-color: rgb(2, 136, 209);"></span><span class="e-tile" role="gridcell"
+                        aria-label="#0097a7ff" aria-selected="false" style="background-color: rgb(0, 151, 167);"></span><span
+                        class="e-tile" role="gridcell" aria-label="#00796bff" aria-selected="false"
+                        style="background-color: rgb(0, 121, 107);"></span><span class="e-tile" role="gridcell"
+                        aria-label="#fbc02dff" aria-selected="false" style="background-color: rgb(251, 192, 45);"></span></div>
+                <div class="e-row" role="row"><span class="e-tile" role="gridcell" aria-label="#666666ff" aria-selected="false"
+                        style="background-color: rgb(102, 102, 102);"></span><span class="e-tile" role="gridcell"
+                        aria-label="#c62828ff" aria-selected="false" style="background-color: rgb(198, 40, 40);"></span><span
+                        class="e-tile" role="gridcell" aria-label="#ad1457ff" aria-selected="false"
+                        style="background-color: rgb(173, 20, 87);"></span><span class="e-tile" role="gridcell"
+                        aria-label="#6a1b9aff" aria-selected="false" style="background-color: rgb(106, 27, 154);"></span><span
+                        class="e-tile" role="gridcell" aria-label="#4527a0ff" aria-selected="false"
+                        style="background-color: rgb(69, 39, 160);"></span><span class="e-tile" role="gridcell"
+                        aria-label="#1565c0ff" aria-selected="false" style="background-color: rgb(21, 101, 192);"></span><span
+                        class="e-tile" role="gridcell" aria-label="#0277bdff" aria-selected="false"
+                        style="background-color: rgb(2, 119, 189);"></span><span class="e-tile" role="gridcell"
+                        aria-label="#00838fff" aria-selected="false" style="background-color: rgb(0, 131, 143);"></span><span
+                        class="e-tile" role="gridcell" aria-label="#00695cff" aria-selected="false"
+                        style="background-color: rgb(0, 105, 92);"></span><span class="e-tile" role="gridcell"
+                        aria-label="#f9a825ff" aria-selected="false" style="background-color: rgb(249, 168, 37);"></span></div>
+                <div class="e-row" role="row"><span class="e-tile" role="gridcell" aria-label="#4d4d4dff" aria-selected="false"
+                        style="background-color: rgb(77, 77, 77);"></span><span class="e-tile" role="gridcell"
+                        aria-label="#b71c1cff" aria-selected="false" style="background-color: rgb(183, 28, 28);"></span><span
+                        class="e-tile" role="gridcell" aria-label="#880e4fff" aria-selected="false"
+                        style="background-color: rgb(136, 14, 79);"></span><span class="e-tile" role="gridcell"
+                        aria-label="#4a148cff" aria-selected="false" style="background-color: rgb(74, 20, 140);"></span><span
+                        class="e-tile" role="gridcell" aria-label="#311b92ff" aria-selected="false"
+                        style="background-color: rgb(49, 27, 146);"></span><span class="e-tile" role="gridcell"
+                        aria-label="#0d47a1ff" aria-selected="false" style="background-color: rgb(13, 71, 161);"></span><span
+                        class="e-tile" role="gridcell" aria-label="#01579bff" aria-selected="false"
+                        style="background-color: rgb(1, 87, 155);"></span><span class="e-tile" role="gridcell"
+                        aria-label="#006064ff" aria-selected="false" style="background-color: rgb(0, 96, 100);"></span><span
+                        class="e-tile" role="gridcell" aria-label="#004d40ff" aria-selected="false"
+                        style="background-color: rgb(0, 77, 64);"></span><span class="e-tile" role="gridcell" aria-label="#f57f17ff"
+                        aria-selected="false" style="background-color: rgb(245, 127, 23);"></span></div>
+            </div>
+        </div>
+    </div>
+    <div class="popup-settings d-none" id="popup-settings">
+        <div class="popup-header-settings" id="popup-header">preview</div>
+        <div class="mainfooter">
+            <div class="popup-main-settings" id="popup-main">
+                <div class="win-preview">
+                    <div class="object" id="custom-element"></div>
+                </div>
+            </div>
+            <hr class="popup-hr">
+            <div class="popup-footer">
+                <button id="popUpYesSettings">Apply</button>
+                <button id="popUpNoSettings">Cancel</button>
+            </div>
+        </div>
+    </div>
+
+    <header>
+        <div class="Logo">
+            Constructor
+            <div class="logo">
+                <svg width="50" height="50" viewBox="0 0 88 88" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M21.0858 42C21.029 42.6591 21 43.3262 21 44C21 56.7025 31.2975 67 44 67C44.6738 67 45.3409 66.971 46 66.9142V83C46 85.7614 43.7614 88 41 88H5C2.23858 88 0 85.7614 0 83V47C0 44.2386 2.23858 42 5 42H21.0858ZM21.0858 42C22.0993 30.2339 31.9713 21 44 21C56.7025 21 67 31.2975 67 44C67 56.0287 57.7661 65.9007 46 66.9142V47C46 44.2386 43.7614 42 41 42H21.0858Z" fill="url(#paint0_linear)"/>
+                    <defs>
+                    <linearGradient id="paint0_linear" x1="70" y1="27" x2="3" y2="94" gradientUnits="userSpaceOnUse">
+                    <stop stop-color="#AB70E6"/>
+                    <stop offset="1" stop-color="#20C0D6"/>
+                    </linearGradient>
+                    </defs>
+                </svg>
+            </div>
+        </div>
+    </header>
+    <main>
+        <div class="Choice">
+            <div class="devices">
+                <button class="active" id='selected-mobile'>Mobile</button>
+                <button id='selected-tablet'>Tablet</button>
+                <button id='selected-desktop'>Desktop</button>
+                <button id='popUp' class="d-none">pop up</button>
+                <button id='popUp-settings' class="d-none">pop up settings</button>
+                <button id="addelem" onclick="createElementMY()" class="d-none">Create elements</button>
+            </div>
+        </div>
+        <div class="ide">
+            <div class="tree">
+                <div class="Tree-header">Tree of page</div>
+                <div class="Tree-view">
+                    <ul>
+                        <li><div class="elem-t" oncontextmenu="showpcl()">Header</div></li>
+                        <li><div class="elem-t" oncontextmenu="showpcl()">Main</div></li>
+                        <li><div class="elem-t" oncontextmenu="showpcl()">Footer</div></li>
+                      </ul>
+                </div>
+            </div>
+            <div class="Window-preview" id="windowPreview">
+                <div class="phone-paddings" id='paddings'>
+                    <iframe height="812" width="375" class="Phone-iframe" id="iframe"></iframe> 
+                </div>
+            </div>
+            <div class="Settings" id="settings">
+                <div class="Settings-header">Elements</div>
+                <div class="constructor">
+                    <div class="elem">input</div>
+                    <div class="elem">textarea</div>
+                    <div class="elem">button</div>
+                    <div class="elem">title</div>
+                    <div class="elem">p</div>
+                    <div class="elem">h1</div>
+                    <div class="elem">h2</div>
+                    <div class="elem">h3</div>
+                    <div class="elem">h4</div>
+                    <div class="elem">h5</div>
+                    <div class="elem">h6</div>
+                    <div class="elem">hr</div>
+                    <div class="elem">div</div>
+                    <div class="elem">a</div>
+                    <div class="elem">img</div>
+                    <div class="elem">svg</div>
+                    <div class="elem">header</div>
+                    <div class="elem">main</div>
+                    <div class="elem">footer</div>
+                </div>
+                <div class="buttons" id="download-page" onclick="DownloadHTML()" oncontextmenu="javascript:alert('success!');">
+                    Download
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+<script src="script.js"></script>
+<script src="createPage.js"></script>
+</html>
