@@ -8,10 +8,7 @@ var pcl_cancel = document.getElementById('pcl-cancel');
 var showHide = document.getElementById('hide_show');
 var ok_CSS_Settings = document.getElementById('ok-CSS-Settings');
 var cancel_CSS_Settings = document.getElementById('close-CSS-Settings');
-var atlu = document.getElementById('atlu');
-var ai = document.getElementById('ai');
-var atld = document.getElementById('atld');
-var hide_show = document.getElementById('hide_show');
+
 
 function createElementMY(){
     /*
@@ -67,7 +64,7 @@ function Preview(){
 }
 
 function DownloadHTML(){
-    Preview();
+    Preview()
     var iframe = document.getElementById("iframe");
     var elmnt = iframe.contentWindow.document;
     download('page1.html', elmnt.documentElement.outerHTML);
@@ -147,22 +144,13 @@ document.addEventListener('click', function(e){
     var target = e.target || e.srcElement;
     if(target.classList[0] == 'pcl-button' && Memory.takeClickedElem() !== ''){
         if(target.innerText == 'cancel'){
-            atlu.style.display = 'flex';
-            atld.style.display = 'flex';
-            pcl.style.height = `${37.4 * 6}px`;
             Memory.setClickedElem('');
             Memory.setOptionPCL('');
             Memory.setElemFromMenuElements('');
         } else {
-            atlu.style.display = 'flex';
-            atld.style.display = 'flex';
-            pcl.style.height = `${37.4 * 6}px`;
             Memory.setOptionPCL(target);
         }
         if(target.innerText == 'remove element'){
-            atlu.style.display = 'flex';
-            atld.style.display = 'flex';
-            pcl.style.height = `${37.4 * 6}px`;
             if(Memory.takeClickedElem().innerText == 'Header'){
                 showPopUp_info('Warning', `Element "${Memory.takeClickedElem().innerText}" can not be deleted`);
             }
@@ -177,9 +165,6 @@ document.addEventListener('click', function(e){
             }
         }
         if(target.innerText == 'show/hide elements'){
-            atlu.style.display = 'flex';
-            atld.style.display = 'flex';
-            pcl.style.height = `${37.4 * 6}px`;
             let length = $(Memory.takeClickedElem()).parent().children().length;
             console.log(length)
             let elems = $(Memory.takeClickedElem()).parent().children();
@@ -231,15 +216,15 @@ function MakeEmptyMemory(){
 function addElemToTree(){
     choice = Memory.takeOptionPCL();
     if(choice == 'add to layer up'){
-        $(`<ul><li><div class="elem-t" oncontextmenu="showpcl(this)" onclick="setElement(this)" data-style="">${Memory.takeElemFromMenuElements()}</div></li></ul>`).insertBefore($(Memory.takeClickedElem()).parent().parent());
+        $(`<li><div class="elem-t" oncontextmenu="showpcl()" onclick="setElement(this)" data-style="">${Memory.takeElemFromMenuElements()}</div></li>`).insertBefore($(Memory.takeClickedElem()).parent());
         MakeEmptyMemory();
     }
     if(choice == 'add inside'){
-        $(Memory.takeClickedElem()).parent().append(`<ul><li><div class="elem-t" oncontextmenu="showpcl(this)" onclick="setElement(this)" data-style="">${Memory.takeElemFromMenuElements()}</div></li></ul>`);
+        $(Memory.takeClickedElem()).parent().append(`<ul><li><div class="elem-t" oncontextmenu="showpcl()" onclick="setElement(this)" data-style="">${Memory.takeElemFromMenuElements()}</div></li></ul>`);
         MakeEmptyMemory();
     }
     if(choice == 'add to layer down'){
-        $(`<ul><li><div class="elem-t" oncontextmenu="showpcl(this)" onclick="setElement(this)" data-style="">${Memory.takeElemFromMenuElements()}</div></li></ul>`).insertAfter($(Memory.takeClickedElem()).parent().parent());
+        $(`<li><div class="elem-t" oncontextmenu="showpcl()" onclick="setElement(this)" data-style="">${Memory.takeElemFromMenuElements()}</div></li>`).insertAfter($(Memory.takeClickedElem()).parent());
         MakeEmptyMemory();
     }
 }
@@ -299,8 +284,7 @@ class LastClickedElement{
     }
 }
 
-function showpcl(elem){
-    console.log(elem.innerText);
+function showpcl(){
     array = handler();
     pcl.classList.remove('d-none');
     if((array[1] + document.getElementById('pcl').clientHeight) > document.body.clientHeight){
@@ -311,25 +295,6 @@ function showpcl(elem){
     }
     //pcl.style.marginTop = `${array[1] - document.getElementById('pcl').clientHeight/2}px`;
     pcl.style.marginLeft = `${array[0]/(window.innerWidth/1440)}px`;
-    if(elem.innerText == 'Header' || elem.innerText == 'Main' || elem.innerText == 'Footer' || elem.innerText == 'img'){
-        if(elem.innerText == 'img'){
-            hide_show.style.display = 'none';
-            ai.style.display = 'none';
-            pcl.style.height = `${37.4 * 4 + 1}px`;
-        } else {
-            hide_show.style.display = 'flex';
-            ai.style.display = 'flex';
-            atlu.style.display = 'none';
-            atld.style.display = 'none';
-            pcl.style.height = `${37.4 * 4 + 1}px`;
-        }
-    } else {
-        hide_show.style.display = 'flex';
-        ai.style.display = 'flex';
-        atlu.style.display = 'flex';
-        atld.style.display = 'flex';
-        pcl.style.height = `${37.4 * 6}px`;
-    }
 }
 
 $(document).ready(function(){

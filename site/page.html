@@ -10,11 +10,11 @@
         Constructor
     </title>
 </head>
-<body class="body" id="body" oncontextmenu="return false;">
+<body id="body" oncontextmenu="return false;">
     <div class="popup-choose-layer d-none" id="pcl">
-        <div class="pcl-button" id="atlu">add to layer up</div>
-        <div class="pcl-button" id="ai">add inside</div>
-        <div class="pcl-button" id="atld">add to layer down</div>
+        <div class="pcl-button">add to layer up</div>
+        <div class="pcl-button">add inside</div>
+        <div class="pcl-button">add to layer down</div>
         <div class="pcl-button" id="hide_show">show/hide elements</div>
         <div class="pcl-button danger" id="removeElem">remove element</div>
         <div class="pcl-button" id="pcl-cancel">cancel</div>
@@ -26,8 +26,8 @@
             <div class="popup-main" id="popup-main">2</div>
         <hr class="popup-hr">
         <div class="popup-footer">
-            <button class="button" id="popUpYes">Yes</button>
-            <button class="button" id="popUpNo">No</button>
+            <button id="popUpYes">Yes</button>
+            <button id="popUpNo">No</button>
         </div>
         </div>
     </div>
@@ -37,7 +37,7 @@
             <div class="popup-main" id="popup-main-info">2</div>
         <hr class="popup-hr">
         <div class="popup-footer">
-            <button class="button" id="popUpOk">Ok</button>
+            <button id="popUpOk">Ok</button>
         </div>
         </div>
     </div>
@@ -48,14 +48,6 @@
                 <div class="CSS-Settings-elem-header">Name of style</div>
                 <div class="CSS-Settings-elem-main">
                     <input type="text" class="input" placeholder="Enter text" id="nameOfStyle">
-                </div>
-            </div>
-            <div class="CSS-Settings-elem" id="existing-styles">
-                <div class="CSS-Settings-elem-header">Existing styles</div>
-                <div class="CSS-Settings-elem-main">
-                    <select name="" id="existingStyles">
-                        <option selected disabled>Choose...</option>
-                    </select>
                 </div>
             </div>
             <div class="CSS-Settings-elem d-none" id="type-of-element">
@@ -80,113 +72,16 @@
                     </select>
                 </div>
             </div>
-            <div class="CSS-Settings-elem d-none" id="font-family">
-                <div class="CSS-Settings-elem-header">Font family</div>
-                <div class="CSS-Settings-elem-main">
-                    <select name="" id="fontFamily">
-                        <option value="Helvetica">Helvetica</option>
-                        <option value="Arial">Arial</option>
-                        <option value="Times">Times</option>
-                        <option value="Times New Roman">Times New Roman</option>
-                        <option value="Courier">Courier</option>
-                        <option value="Courier New">Courier New</option>
-                        <option value="Verdana">Verdana</option>
-                        <option value="Tahoma">Tahoma</option>
-                        <option value="Arial Black">Arial Black</option>
-                        <option value="Comic Sans MS">Comic Sans MS</option>
-                        <option value="Impact">Impact</option>
-                        <option value="Avant Garde">Avant Garde</option>
-                        <option value="Andale Mono">Andale Mono</option>
-                    </select>
-                </div>
-            </div>
-            <div class="CSS-Settings-elem d-none" id="display-flex">
-                <div class="CSS-Settings-elem-header">Flex</div>
-                <div class="CSS-Settings-elem-main">
-                    <select name="" id="displayFlex">
-                        <option value="no">No</option>
-                        <option value="yes">Yes</option>
-                    </select>
-                </div>
-            </div>
-            <div class="CSS-Settings-elem d-none" id="flex-direction">
-                <div class="CSS-Settings-elem-header">Flex direction</div>
-                <div class="CSS-Settings-elem-main">
-                    <select name="" id="flexDirection">
-                        <option selected disabled>Choose...</option>
-                        <option value="row">row</option>
-                        <option value="column">column</option>
-                    </select>
-                </div>
-            </div>
-            <div class="CSS-Settings-elem d-none" id="justify-content">
-                <div class="CSS-Settings-elem-header">Justify content</div>
-                <div class="CSS-Settings-elem-main">
-                    <select name="" id="justifyContent">
-                        <option value="start">Start</option>
-                        <option value="center">Center</option>
-                        <option value="end">End</option>
-                        <option value="space-around">space-around</option>
-                        <option value="space-between">space-between</option>
-                    </select>
-                </div>
-            </div>
-            <div class="CSS-Settings-elem d-none" id="align-items">
-                <div class="CSS-Settings-elem-header">Align items</div>
-                <div class="CSS-Settings-elem-main">
-                    <select name="" id="alignItems">
-                        <option value="flex-start">Start</option>
-                        <option value="center">Center</option>
-                        <option value="flex-end">End</option>
-                    </select>
-                </div>
-            </div>
-            <div class="CSS-Settings-elem d-none" id="text-decoration">
-                <div class="CSS-Settings-elem-header">Text decoration</div>
-                <div class="CSS-Settings-elem-main">
-                    <select name="" id="textDecoration">
-                        <option selected disabled>Choose...</option>
-                        <option value="not-none">Yes</option>
-                        <option value="none">No</option>
-                    </select>
-                </div>
-            </div>
-            <div class="CSS-Settings-elem d-none" id="overflow">
-                <div class="CSS-Settings-elem-header">Overflow</div>
-                <div class="CSS-Settings-elem-main">
-                    <select name="" id="Overflow">
-                        <option value="no">no</option>
-                        <option value="x">x</option>
-                        <option value="y">y</option>
-                    </select>
-                </div>
-            </div>
             <div class="CSS-Settings-elem d-none" id="text">
                 <div class="CSS-Settings-elem-header">Text</div>
                 <div class="CSS-Settings-elem-main">
-                    <input type="text" class="input" placeholder="Enter text" id="Text">
+                    <input type="text" class="input" placeholder="Enter text">
                 </div>
             </div>
             <div class="CSS-Settings-elem d-none" id="Font-size">
                 <div class="CSS-Settings-elem-header">Font size</div>
                 <div class="CSS-Settings-elem-main">
                     <input type="number" class="input" placeholder="px" id="font-size">
-                </div>
-            </div>
-            <div class="CSS-Settings-elem d-none" id="font-weight">
-                <div class="CSS-Settings-elem-header">Font weight</div>
-                <div class="CSS-Settings-elem-main">
-                    <select name="" id="fontWeight">
-                        <option value="100">100</option>
-                        <option value="200">200</option>
-                        <option value="300">300</option>
-                        <option value="400">400</option>
-                        <option value="500">500</option>
-                        <option value="600">600</option>
-                        <option value="700">700</option>
-                        <option value="800">800</option>
-                        <option value="900">900</option>
-                    </select>
                 </div>
             </div>
             <div class="CSS-Settings-elem d-none" id="placeholder">
@@ -198,117 +93,33 @@
             <div class="CSS-Settings-elem d-none" id="size">
                 <div class="CSS-Settings-elem-header">Size</div>
                 <div class="CSS-Settings-elem-main">
-                    <div>
-                        <div class="two-columns">
-                            <div class="center-elem">
-                                <input type="number" class="input width-60" placeholder="width px" id="width">
-                            </div>
-                            <div class="center-elem">
-                                <input type="number" class="input width-60" placeholder="height px" id="height">
-                            </div>
-                        </div>
-                        <div class="center-elem">
-                            <select name="" id="size-size">
-                                <option selected disabled>Choose...</option>
-                                <option value="px">px</option>
-                                <option value="%">%</option>
-                            </select>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="CSS-Settings-elem" id="position">
-                <div class="CSS-Settings-elem-header">Position</div>
-                <div class="CSS-Settings-elem-main">
-                    <div>
-                        <div class="two-columns">
-                            <div class="">
-                                <div class="center-elem">
-                                    <input type="number" class="input width-60" placeholder="left" id="positionLeft">
-                                </div>
-                                <div class="center-elem">
-                                    <input type="number" class="input width-60" placeholder="top" id="positionTop">
-                                </div>
-                            </div>
-                            <div class="">
-                                <div class="center-elem">
-                                    <input type="number" class="input width-60" placeholder="right" id="positionRight">
-                                </div>
-                                <div class="center-elem">
-                                    <input type="number" class="input width-60" placeholder="bottom" id="positionBottom">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="center-elem">
-                            <select name="" id="typePosition">
-                                <option value="">unfixed</option>
-                                <option value="fixed">fixed</option>
-                            </select>
-                        </div>
-                    </div>
+                    <input type="number" class="input width-30" placeholder="width px" id="width">
+                    <input type="number" class="input width-30" placeholder="height px" id="height">
                 </div>
             </div>
             <div class="CSS-Settings-elem d-none" id="margin">
                 <div class="CSS-Settings-elem-header">Margin</div>
                 <div class="CSS-Settings-elem-main">
-                    <div>
-                        <div class="two-columns">
-                            <div class="">
-                                <div class="center-elem">
-                                    <input type="number" class="input width-60" placeholder="top px" id="marginTop">
-                                </div>
-                                <div class="center-elem">
-                                    <input type="number" class="input width-60" placeholder="bottom px" id="marginBottom">
-                                </div>
-                            </div>
-                            <div class="">
-                                <div class="center-elem">
-                                    <input type="number" class="input width-60" placeholder="left px" id="marginLeft">
-                                </div>
-                                <div class="center-elem">
-                                    <input type="number" class="input width-60" placeholder="right px" id="marginRigth">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="center-elem">
-                            <select name="" id="margin-size">
-                                <option selected disabled>Choose...</option>
-                                <option value="px">px</option>
-                                <option value="%">%</option>
-                            </select>
-                        </div>
+                    <div class="width-40">
+                        <input type="number" class="input" placeholder="top px" id="marginTop">
+                        <input type="number" class="input" placeholder="bottom px" id="marginBottom">
+                    </div>
+                    <div class="width-40">
+                        <input type="number" class="input" placeholder="left px" id="marginLeft">
+                        <input type="number" class="input" placeholder="right px" id="marginRigth">
                     </div>
                 </div>
             </div>
             <div class="CSS-Settings-elem d-none" id="padding">
                 <div class="CSS-Settings-elem-header">Padding</div>
                 <div class="CSS-Settings-elem-main">
-                    <div>
-                        <div class="two-columns">
-                            <div class="">
-                                <div class="center-elem">
-                                    <input type="number" class="input width-60" placeholder="top px" id="paddingTop">
-                                </div>
-                                <div class="center-elem">
-                                    <input type="number" class="input width-60" placeholder="bottom px" id="paddingBottom">
-                                </div>
-                            </div>
-                            <div class="">
-                                <div class="center-elem">
-                                    <input type="number" class="input width-60" placeholder="left px" id="paddingLeft">
-                                </div>
-                                <div class="center-elem">
-                                    <input type="number" class="input width-60" placeholder="right px" id="paddingRight">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="center-elem">
-                            <select name="" id="padding-size">
-                                <option selected disabled>Choose...</option>
-                                <option value="px">px</option>
-                                <option value="%">%</option>
-                            </select>
-                        </div>
+                    <div class="width-40">
+                        <input type="number" class="input" placeholder="top px" id="paddingTop">
+                        <input type="number" class="input" placeholder="bottom px" id="paddingBottom">
+                    </div>
+                    <div class="width-40">
+                        <input type="number" class="input" placeholder="left px" id="paddingLeft">
+                        <input type="number" class="input" placeholder="right px" id="paddingRight">
                     </div>
                 </div>
             </div>
@@ -324,19 +135,6 @@
                             <div class="center">Color background</div>
                             <div class="center"><input type="color" class="input-color" placeholder="bottom" id="background-color"></div>
                         </div>
-                    </div>
-                </div>
-            </div>
-            <div class="CSS-Settings-elem d-none" id="box-shadow">
-                <div class="CSS-Settings-elem-header">Box shadow</div>
-                <div class="CSS-Settings-elem-main">
-                    <div class="width-40">
-                        <input type="number" class="input" placeholder="x" id="xColor">
-                        <input type="number" class="input" placeholder="y" id="yColor">
-                    </div>
-                    <div class="width-40">
-                        <input type="number" class="input" placeholder="blur" id="blurColor">
-                        <input type="color" class="input-to-color" id="boxShadowColor">
                     </div>
                 </div>
             </div>
@@ -398,8 +196,8 @@
                 </div>
             </div>
         </div>
-        <div class="">
-            <div class="buttons d-none" id="ok-CSS-Settings">Ok</div>
+        <div class="button-row">
+            <div class="buttons" id="ok-CSS-Settings">Ok</div>
             <div class="buttons" id="close-CSS-Settings">Cancel</div>
         </div>
     </div>
@@ -585,13 +383,13 @@
             </div>
             <hr class="popup-hr">
             <div class="popup-footer">
-                <button class="button" id="popUpYesSettings">Apply</button>
-                <button class="button" id="popUpNoSettings">Cancel</button>
+                <button id="popUpYesSettings">Apply</button>
+                <button id="popUpNoSettings">Cancel</button>
             </div>
         </div>
     </div>
 
-    <header class="header">
+    <header>
         <div class="Logo">
             Constructor
             <div class="logo">
@@ -607,25 +405,25 @@
             </div>
         </div>
     </header>
-    <main class="main">
+    <main>
         <div class="Choice">
             <div class="devices">
-                <button class="button active" id='selected-mobile'>Mobile</button>
-                <button class="button" id='selected-tablet'>Tablet</button>
-                <button class="button " id='selected-desktop'>Desktop</button>
-                <button class="button d-none" id='popUp' class="d-none">pop up</button>
-                <button class="button d-none" id='popUp-settings' class="d-none">pop up settings</button>
-                <button class="button d-none" id="addelem" onclick="create_createElementMY()" class="">Create elements</button>
+                <button class="active" id='selected-mobile'>Mobile</button>
+                <button id='selected-tablet'>Tablet</button>
+                <button id='selected-desktop'>Desktop</button>
+                <button id='popUp' class="d-none">pop up</button>
+                <button id='popUp-settings' class="d-none">pop up settings</button>
+                <button id="addelem" onclick="createElementMY()" class="">Create elements</button>
             </div>
         </div>
         <div class="ide">
             <div class="tree">
                 <div class="Tree-header">Tree of page</div>
                 <div class="Tree-view">
-                    <ul id="pageTree">
-                        <li><div class="elem-t" oncontextmenu="showpcl(this)" onclick="setElement(this)" data-style="">Header</div></li>
-                        <li id="MAIN"><div class="elem-t" oncontextmenu="showpcl(this)" onclick="setElement(this)" data-style="">Main</div></li>
-                        <li><div class="elem-t" oncontextmenu="showpcl(this)" onclick="setElement(this)" data-style="">Footer</div></li>
+                    <ul>
+                        <li><div class="elem-t" oncontextmenu="showpcl()" onclick="setElement(this)" data-style="">Header</div></li>
+                        <li><div class="elem-t" oncontextmenu="showpcl()" onclick="setElement(this)" data-style="">Main</div></li>
+                        <li><div class="elem-t" oncontextmenu="showpcl()" onclick="setElement(this)" data-style="">Footer</div></li>
                       </ul>
                 </div>
             </div>
@@ -637,24 +435,22 @@
             <div class="Settings" id="settings">
                 <div class="Settings-header">Elements</div>
                 <div class="constructor">
-                    <div class="elem" id="elem-input">input</div>
-                    <div class="elem" id="elem-textarea">textarea</div>
-                    <div class="elem" id="elem-button">button</div>
-                    <div class="elem" id="elem-title">title</div>
-                    <div class="elem" id="elem-p">p</div>
-                    <div class="elem" id="elem-h1">h1</div>
-                    <div class="elem" id="elem-h2">h2</div>
-                    <div class="elem" id="elem-h3">h3</div>
-                    <div class="elem" id="elem-h4">h4</div>
-                    <div class="elem" id="elem-h5">h5</div>
-                    <div class="elem" id="elem-h6">h6</div>
-                    <div class="elem" id="elem-hr">hr</div>
-                    <div class="elem" id="elem-div">div</div>
-                    <div class="elem" id="elem-a">a</div>
-                    <div class="elem" id="elem-img">img</div>
-                    <div class="elem" id="elem-svg">svg</div>
-                    <div class="elem" id="elem-select">select</div>
-                    <div class="elem" id="elem-option">option</div>
+                    <div class="elem">input</div>
+                    <div class="elem">textarea</div>
+                    <div class="elem">button</div>
+                    <div class="elem">title</div>
+                    <div class="elem">p</div>
+                    <div class="elem">h1</div>
+                    <div class="elem">h2</div>
+                    <div class="elem">h3</div>
+                    <div class="elem">h4</div>
+                    <div class="elem">h5</div>
+                    <div class="elem">h6</div>
+                    <div class="elem">hr</div>
+                    <div class="elem">div</div>
+                    <div class="elem">a</div>
+                    <div class="elem">img</div>
+                    <div class="elem">svg</div>
                 </div>
                 <div class="buttons" id="download-page" onclick="DownloadHTML()" oncontextmenu="javascript:alert('success!');">
                     Download
